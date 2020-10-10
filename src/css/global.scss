@@ -1,0 +1,101 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply transition-colors duration-300 text-gray-600 hover:text-white;
+  }
+
+  .nav-link-active {
+    @apply border-b-2 border-solid;
+  }
+
+  .progress-container {
+    @apply flex w-full my-1;
+  }
+
+  .progress-title {
+    @apply w-1/3 bg-accent text-white mr-2 pl-2;
+  }
+
+  .progress-bg {
+    @apply relative flex-1 flex bg-gray-300;
+  }
+
+  .progress {
+    @apply h-full transition-all duration-1000 bg-black;
+    width: 0%;
+  }
+
+  .progress-percent {
+    @apply absolute transition-all duration-1000 text-center text-white font-bold;
+    left: 50%;
+    opacity: 0;
+  }
+
+  .title-line {
+    @apply flex items-center;
+  }
+
+  .title-line::before {
+    content: "";
+    flex: 1;
+    margin-right: 1rem;
+    height: 2px;
+    background-color: #000;
+  }
+
+  .title-line::after {
+    content: "";
+    flex: 1;
+    margin-left: 1rem;
+    height: 2px;
+    background-color: #000;
+  }
+
+  .aos-animate .pw-90 {
+    width: 90%;
+  }
+
+  .aos-animate .pw-80 {
+    width: 80%;
+  }
+
+  .aos-animate .pw-70 {
+    width: 70%;
+  }
+
+  .aos-animate .progress-percent {
+    opacity: 1;
+  }
+}
+
+section {
+  @apply overflow-hidden;
+}
+
+:root {
+  --navbar-height: 52px;
+}
+
+*:focus {
+  outline: 0 !important;
+}
+
+body,
+html {
+  // @apply bg-secondary;
+  height: 100%;
+}
+
+.container {
+  @apply mx-auto;
+}
+
+#app {
+  padding-top: var(--navbar-height);
+  height: 100%;
+}
