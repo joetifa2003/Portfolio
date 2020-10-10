@@ -183,27 +183,4 @@ export default Vue.extend({
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.vue-typer {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #1e1e1e;
-  padding: 15px;
-  width: 329px;
-  height: 132px;
-}
-
-.vue-typer .custom.char {
-  color: #d4d4bd;
-  background-color: #1e1e1e;
-}
-.vue-typer .custom.char.selected {
-  background-color: #264f78;
-}
-
-.vue-typer .custom.caret {
-  width: 10px;
-  background-color: #ffffff;
-}
 </style>

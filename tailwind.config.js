@@ -6,7 +6,12 @@ module.exports = {
   experimental: {
     applyComplexClasses: true,
   },
-  purge: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
+  purge: {
+    content: ["./src/**/*.html", "./src/**/*.vue", "./src/**/*.jsx"],
+    options: {
+      whitelist: ["aos-animate", "pw-80"],
+    },
+  },
   target: "relaxed",
   prefix: "",
   important: false,
