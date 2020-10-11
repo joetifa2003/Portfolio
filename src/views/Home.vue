@@ -4,13 +4,15 @@
       <!-- Overlay -->
       <div class="w-full h-full bg-black bg-opacity-85 hero-overlay">
         <div class="container flex flex-col h-full justify-center">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="flex justify-center">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div
+              data-aos="fade-right"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              class="flex-1 flex justify-center"
+            >
               <img
-                data-aos="fade-right"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
-                class="h-40 md:h-64 rounded-full"
+                class="transition-all duration-500 h-40 md:h-64 rounded-full hover:rounded-none"
                 src="@/assets/avatar.jpg"
                 alt="Avatar"
               />
@@ -19,17 +21,17 @@
               data-aos="fade-left"
               data-aos-easing="ease-in-out"
               data-aos-duration="1000"
-              class="flex flex-col items-center md:items-start"
+              class="flex-1 flex flex-col items-center md:items-start"
             >
               <p class="text-white font-bold text-xl mb-5 md:text-4xl">
-                Hi, 👋
+                Hi,
                 <br />
-                My name is Youssef Ahmed 👀
+                My name is Youssef Ahmed
                 <br />
                 I'm a
                 <span class="text-accent">full-stack web devoleper</span> 👨‍💻
                 <br />
-                Welcome to my website ❤️
+                Welcome to my website
               </p>
               <div>
                 <button
@@ -58,15 +60,15 @@
       >
         About me
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="gap-8 flex flex-col md:flex-row">
         <div
           data-aos="fade-down"
           data-aos-easing="ease-in-out"
           data-aos-duration="1000"
-          class="w-full h-full flex flex-col justify-center shadow-2xl border-black border-2 py-5 px-8"
+          class="flex-1 flex flex-col justify-center shadow-xl border-black border-2 py-5 px-8"
         >
           <img
-            class="h-32 rounded-full mx-auto mb-4"
+            class="transition-all duration-500 h-32 rounded-full mx-auto mb-4 hover:rounded-none"
             src="@/assets/avatar.jpg"
           />
           <p class="text-justify font-bold">
@@ -80,7 +82,7 @@
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
           data-aos-duration="1000"
-          class="flex flex-col justify-center shadow-2xl border-black border-2 py-5 px-8"
+          class="flex-1 flex flex-col justify-center shadow-xl border-black border-2 py-5 px-8"
         >
           <div
             data-aos="fade-in"
@@ -91,60 +93,35 @@
             My skills
           </div>
 
-          <div class="progress-container">
-            <div class="progress-title">Vuejs</div>
-            <div class="progress-bg">
-              <div class="progress pw-80 delay-1000"></div>
-              <div class="progress-percent delay-1100">80%</div>
+          <div
+            v-for="(skill, i) in skills"
+            :key="i"
+            class="progress-container group"
+          >
+            <div class="progress-title">
+              {{ skill.name }}
+              <!-- <img
+                class="progress-logo group-hover:opacity-100"
+                :src="
+                  require(`@/assets/logos/${skill.name.replace(' ', '_')}.svg`)
+                "
+                alt=""
+              /> -->
             </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">HTML</div>
             <div class="progress-bg">
-              <div class="progress pw-90 delay-1100"></div>
-              <div class="progress-percent delay-1200">90%</div>
-            </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">CSS</div>
-            <div class="progress-bg">
-              <div class="progress pw-90 delay-1200"></div>
-              <div class="progress-percent delay-1300">90%</div>
-            </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">SQL</div>
-            <div class="progress-bg">
-              <div class="progress pw-70 delay-1300"></div>
-              <div class="progress-percent delay-1400">70%</div>
-            </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">Golang</div>
-            <div class="progress-bg">
-              <div class="progress pw-70 delay-1400"></div>
-              <div class="progress-percent delay-1500">70%</div>
-            </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">Python</div>
-            <div class="progress-bg">
-              <div class="progress pw-80 delay-1500"></div>
-              <div class="progress-percent delay-1600">80%</div>
-            </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">Photoshop</div>
-            <div class="progress-bg">
-              <div class="progress pw-70 delay-1600"></div>
-              <div class="progress-percent delay-1700">70%</div>
-            </div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-title">Adobe XD</div>
-            <div class="progress-bg">
-              <div class="progress pw-80 delay-1700"></div>
-              <div class="progress-percent delay-1800">80%</div>
+              <div
+                class="progress"
+                :style="
+                  `--progress: ${skill.percent}; --progress-delay: ${1000 +
+                    100 * i}ms`
+                "
+              ></div>
+              <div
+                class="progress-percent"
+                :style="`--progress-percent-delay: ${1100 + 100 * i}ms`"
+              >
+                {{ skill.percent }}
+              </div>
             </div>
           </div>
         </div>
@@ -161,6 +138,49 @@ import Vue from "vue";
 export default Vue.extend({
   name: "Home",
   setup() {
+    const skills = ref([
+      {
+        name: "Vuejs",
+        percent: "80%",
+      },
+      {
+        name: "HTML",
+        percent: "90%",
+      },
+      {
+        name: "CSS",
+        percent: "90%",
+      },
+      {
+        name: "Flutter",
+        percent: "65%",
+      },
+      {
+        name: "Firebase",
+        percent: "85%",
+      },
+      {
+        name: "SQL",
+        percent: "70%",
+      },
+      {
+        name: "Golang",
+        percent: "70%",
+      },
+      {
+        name: "Python",
+        percent: "80%",
+      },
+      {
+        name: "Photoshop",
+        percent: "70%",
+      },
+      {
+        name: "Adobe XD",
+        percent: "80%",
+      },
+    ]);
+
     const aboutSection = ref(null);
 
     function scrollToSection(sectionRef: any, sectionName: any) {
@@ -169,6 +189,7 @@ export default Vue.extend({
     }
 
     return {
+      skills,
       aboutSection,
       scrollToSection,
     };

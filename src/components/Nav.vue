@@ -17,7 +17,7 @@
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
         </button>
-        <div class="font-bold text-2xl">TifaTech</div>
+        <div class="font-bold text-2xl">Youssef Ahmed</div>
       </div>
       <scrollactive
         :offset="52"
@@ -37,7 +37,7 @@
     />
     <aside
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
-      class="transform w-64 bg-gray-700 fixed h-full ease-in-out transition-all duration-300 z-30"
+      class="transform w-64 bg-secondary fixed h-full ease-in-out transition-all duration-300 z-30"
     ></aside>
   </header>
 </template>
