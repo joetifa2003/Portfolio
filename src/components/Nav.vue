@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="fixed top-0 w-full bg-primary text-white py-2 z-50">
+    <nav class="fixed top-0 w-full bg-primary text-white py-2 px-5 z-50">
       <div class="flex justify-between items-center container">
         <div class="flex">
           <button

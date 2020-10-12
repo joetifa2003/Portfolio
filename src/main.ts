@@ -8,6 +8,7 @@ import VueCompositionAPI from "@vue/composition-api";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import VueScrollactive from "vue-scrollactive";
+import "pattern.css/dist/pattern.css";
 
 Vue.config.productionTip = false;
 Vue.use(VueCompositionAPI);
@@ -25,4 +26,5 @@ new Vue({
     });
   },
   render: h => h(App),
+  mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
 }).$mount("#app");
