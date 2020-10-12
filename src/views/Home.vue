@@ -6,7 +6,9 @@
         class="w-full h-full bg-black bg-opacity-85 hero-overlay pattern-vertical-lines-lg text-secondary text-opacity-25 px-5"
       >
         <div class="container flex flex-col h-full justify-center">
-          <div class="flex flex-col md:flex-row pattern-dots-md py-5 -mb-8">
+          <div
+            class="flex flex-col md:flex-row pattern-dots-md text-accent text-opacity-25 py-5 -mb-8"
+          >
             <div
               data-aos="fade-right"
               data-aos-easing="ease-in-out"
