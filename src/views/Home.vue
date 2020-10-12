@@ -6,16 +6,16 @@
         class="w-full h-full bg-black bg-opacity-85 hero-overlay pattern-vertical-lines-lg text-secondary text-opacity-25 px-5"
       >
         <div class="container flex flex-col h-full justify-center">
-          <div class="flex flex-col md:flex-row gap-8">
+          <div class="flex flex-col md:flex-row pattern-dots-md py-5 -mb-8">
             <div
               data-aos="fade-right"
               data-aos-easing="ease-in-out"
               data-aos-duration="1000"
-              class="flex-1 flex justify-center"
+              class="flex-1 flex justify-center mb-8"
             >
               <img
                 class="transition-all duration-500 h-40 md:h-64 rounded-full hover:rounded-none"
-                src="@/assets/avatar.jpg"
+                src="@/assets/my_avatar.jpg"
                 alt="Avatar"
               />
             </div>
@@ -23,7 +23,7 @@
               data-aos="fade-left"
               data-aos-easing="ease-in-out"
               data-aos-duration="1000"
-              class="flex-1 flex flex-col items-center md:items-start"
+              class="flex-1 flex flex-col items-center md:items-start mb-8"
             >
               <p class="text-white font-bold text-xl md:text-4xl mb-5">
                 Hi,
@@ -31,7 +31,7 @@
                 My name is
                 <span class="bg-accent">Youssef Ahmed</span>
                 <br />
-                I'm a full-stack web devoleper 👨‍💻
+                I'm a full-stack web devoleper
                 <br />
                 Welcome to my website
               </p>
@@ -85,7 +85,7 @@
           >
             <img
               class="transition-all duration-500 h-32 rounded-full mx-auto mb-4 hover:rounded-none"
-              src="@/assets/avatar.jpg"
+              src="@/assets/my_avatar.jpg"
             />
             <p class="text-justify font-bold">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
