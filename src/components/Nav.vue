@@ -38,9 +38,33 @@
       class="overlay transition duration-500 ease-in-out bg-black w-full h-full fixed z-20 "
     />
     <aside
-      :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
-      class="transform w-64 bg-secondary fixed h-full ease-in-out transition-all duration-300 z-30"
-    ></aside>
+      :class="isOpen ? 'translate-x-0 nav-open' : '-translate-x-full'"
+      class="transform w-64 bg-secondary fixed h-full ease-in-out transition-all duration-300 z-30 py-8"
+    >
+      <scrollactive
+        :offset="52"
+        active-class="title-line"
+        class="flex flex-col"
+      >
+        <div class="flex justify-center mb-5">
+          <img
+            class="transition-all duration-500 h-32 md:h-64 rounded-full hover:rounded-none"
+            src="@/assets/my_avatar.jpg"
+            alt="Avatar"
+          />
+        </div>
+        <a
+          href="#home-section"
+          class="scrollactive-item nav-link mb-5 menu-link delay-500"
+          >Home</a
+        >
+        <a
+          href="#about-section"
+          class="scrollactive-item nav-link mb-5 menu-link delay-700"
+          >About</a
+        >
+      </scrollactive>
+    </aside>
   </header>
 </template>
 

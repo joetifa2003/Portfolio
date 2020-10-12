@@ -6,11 +6,20 @@
 
 @layer components {
   .nav-link {
-    @apply transition-colors duration-300 text-gray-600 hover:text-white;
+    @apply transition-colors duration-300 text-white text-center;
   }
 
   .nav-link-active {
     @apply border-b-2 border-solid;
+  }
+
+  .menu-link {
+    @apply transition-all duration-500;
+    opacity: 0;
+  }
+
+  .nav-open .menu-link {
+    opacity: 1;
   }
 
   .progress-container {
@@ -73,26 +82,6 @@
 
   .aos-animate .progress-percent {
     opacity: 1;
-  }
-
-  .custom-shape-divider-top-1602488028 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-  .custom-shape-divider-top-1602488028 svg {
-    position: relative;
-    display: block;
-    width: calc(150% + 1.3px);
-    height: 5rem;
-  }
-
-  .custom-shape-divider-top-1602488028 .shape-fill {
-    @apply fill-current text-accent;
   }
 
   .custom-shape-divider-top-1602488617 {
