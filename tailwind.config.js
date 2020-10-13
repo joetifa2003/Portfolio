@@ -823,5 +823,9 @@ module.exports = {
     animation: ["responsive"],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    require('tailwindcss-gap')({
+      prefix: 'c-',   // defaults to 'c-'
+    }),
+  ],
 };
