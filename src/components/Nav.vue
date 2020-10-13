@@ -1,8 +1,10 @@
 <template>
   <header>
-    <nav class="fixed top-0 w-full bg-primary text-white py-2 px-5 z-50">
+    <nav
+      class="fixed top-0 w-full px-5 bg-primary border-accent border-b-4 text-white py-2 z-50"
+    >
       <div class="flex justify-between items-center container">
-        <div class="flex">
+        <div class="flex-1 flex">
           <button
             @click="isOpen = !isOpen"
             class="flex items-center text-gray-500 hover:text-white mr-5 md:hidden"
@@ -18,18 +20,18 @@
           </button>
           <div class="font-bold text-2xl">Youssef Ahmed</div>
         </div>
-        <scrollactive
-          :offset="52"
-          active-class="nav-link-active"
-          class="hidden md:flex"
-        >
-          <a href="#home-section" class="scrollactive-item nav-link mr-8"
-            >Home</a
+        <div class="c-gap-wrapper">
+          <scrollactive
+            :offset="52"
+            active-class="nav-link-active"
+            class="hidden md:flex c-gap c-gap-8"
           >
-          <a href="#about-section" class="scrollactive-item nav-link mr-8"
-            >About</a
-          >
-        </scrollactive>
+            <a href="#home-section" class="scrollactive-item nav-link">Home</a>
+            <a href="#about-section" class="scrollactive-item nav-link"
+              >About</a
+            >
+          </scrollactive>
+        </div>
       </div>
     </nav>
     <div

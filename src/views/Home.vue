@@ -3,13 +3,13 @@
     <section id="home-section" class="hero h-full w-full bg-primary relative">
       <!-- Overlay -->
       <div
-        class="w-full h-full bg-black bg-opacity-85 hero-overlay pattern-vertical-lines-lg text-secondary text-opacity-25 px-5"
+        class="w-full h-full bg-black bg-opacity-90 hero-overlay pattern-vertical-lines-lg text-secondary text-opacity-25 px-5"
       >
         <div class="container flex flex-col h-full justify-center">
-          <div class="c-gap-wrapper">
-            <div
-              class="flex flex-col c-gap c-gap-8 md:flex-row pattern-dots-lg text-accent text-opacity-25 py-10"
-            >
+          <div
+            class="c-gap-wrapper pattern-dots-lg border-accent border-4 text-accent text-opacity-25 py-10"
+          >
+            <div class="flex flex-col c-gap c-gap-x-8 md:flex-row">
               <div
                 data-aos="fade-right"
                 data-aos-easing="ease-in-out"
@@ -28,7 +28,9 @@
                 data-aos-duration="1000"
                 class="flex-1 flex flex-col items-center md:items-start"
               >
-                <p class="text-white font-bold text-xl md:text-4xl mb-5">
+                <p
+                  class="text-white font-bold text-xl sm:text-2xl md:text-4xl mb-5"
+                >
                   Hi,
                   <br />
                   My name is

@@ -30,7 +30,8 @@ module.exports = {
       black: "#000",
       white: "#fff",
 
-      primary: "#373a40",
+      primary: "#000",
+      // primary: "#373a40",
       secondary: "#686d76",
       accent: "#19d3da",
       background: "#eeeeee",
@@ -408,6 +409,8 @@ module.exports = {
       "50": "0.5",
       "75": "0.75",
       "85": "0.85",
+      "90": "0.9",
+      "95": "0.95",
       "100": "1",
     },
     order: {
