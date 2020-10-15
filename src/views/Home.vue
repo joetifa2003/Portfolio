@@ -59,7 +59,7 @@
       <section
         ref="aboutSection"
         id="about-section"
-        class="h-full flex flex-col relative mx-auto pt-20"
+        class="h-full flex flex-col relative mx-auto pt-20 px-5"
       >
         <div class="custom-shape-divider-top-1602488617">
           <svg
