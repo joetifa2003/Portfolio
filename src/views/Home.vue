@@ -59,7 +59,7 @@
       <section
         ref="aboutSection"
         id="about-section"
-        class="h-full flex flex-col relative mx-auto py-20 px-5"
+        class="h-full flex flex-col relative mx-auto pt-20"
       >
         <div class="custom-shape-divider-top-1602488617">
           <svg
@@ -94,20 +94,25 @@
                 data-aos-easing="ease-in-out"
                 data-aos-duration="500"
                 :data-aos-delay="250 * i"
-                class="flex flex-col items-center justify-center border-black border-2 shadow-xl p-5 group hover:bg-black"
               >
-                <i
-                  class="material-icons-outlined text-6xl group-hover:text-white"
-                  >{{ item.icon }}</i
-                >
                 <div
-                  class="text-center font-bold text-4xl group-hover:text-white"
+                  class="flex flex-col items-center justify-center transition-all duration-500 transform border-black border-2 shadow-xl p-5 group hover:bg-black hover:scale-110 cursor-pointer"
                 >
-                  {{ item.title }}
+                  <i
+                    class="material-icons-outlined text-6xl group-hover:text-white"
+                    >{{ item.icon }}</i
+                  >
+                  <div
+                    class="text-center font-bold text-4xl group-hover:text-white"
+                  >
+                    {{ item.title }}
+                  </div>
+                  <p
+                    class="text-center group-hover:text-white whitespace-pre-line"
+                  >
+                    {{ item.desc }}
+                  </p>
                 </div>
-                <p class="text-center group-hover:text-white">
-                  {{ item.desc }}
-                </p>
               </div>
             </div>
           </div>
@@ -213,7 +218,7 @@ export default Vue.extend({
         icon: "dynamic_feed",
         title: "Dynamic",
         desc:
-          "Websites don't have to be static, I love making pages come to life.",
+          "Websites don't have to be static,\n I love making pages come to life.",
       },
     ]);
 
