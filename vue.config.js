@@ -5,6 +5,10 @@ module.exports = {
     },
   },
 
+  configureWebpack: {
+    plugins: [],
+  },
+
   productionSourceMap: false,
 
   pluginOptions: {

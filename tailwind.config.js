@@ -721,7 +721,7 @@ module.exports = {
     appearance: ["responsive"],
     backgroundAttachment: ["responsive"],
     backgroundClip: ["responsive"],
-    backgroundColor: ["responsive", "hover", "focus"],
+    backgroundColor: ["responsive", "hover", "focus", "group-hover"],
     backgroundImage: ["responsive"],
     gradientColorStops: ["responsive", "hover", "focus"],
     backgroundOpacity: ["responsive", "hover", "focus"],
@@ -792,7 +792,7 @@ module.exports = {
     strokeWidth: ["responsive"],
     tableLayout: ["responsive"],
     textAlign: ["responsive"],
-    textColor: ["responsive", "hover", "focus"],
+    textColor: ["responsive", "hover", "focus", "group-hover"],
     textOpacity: ["responsive", "hover", "focus"],
     textDecoration: ["responsive", "hover", "focus"],
     textTransform: ["responsive"],
@@ -827,8 +827,8 @@ module.exports = {
   },
   corePlugins: {},
   plugins: [
-    require('tailwindcss-gap')({
-      prefix: 'c-',   // defaults to 'c-'
+    require("tailwindcss-gap")({
+      prefix: "c-", // defaults to 'c-'
     }),
   ],
 };
