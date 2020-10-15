@@ -93,6 +93,7 @@
                 data-aos="flip-left"
                 data-aos-easing="ease-in-out"
                 data-aos-duration="500"
+                :data-aos-delay="250 * i"
                 class="flex flex-col items-center justify-center border-black border-2 shadow-xl p-5 group hover:bg-black"
               >
                 <i
