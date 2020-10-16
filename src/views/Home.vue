@@ -1,23 +1,23 @@
 <template>
   <div class="w-full h-full">
-    <section id="home-section" class="hero h-full w-full bg-primary relative">
+    <section id="home-section" class="relative w-full h-full hero bg-primary">
       <!-- Overlay -->
       <div
-        class="w-full h-full bg-black bg-opacity-90 hero-overlay pattern-vertical-lines-lg text-secondary text-opacity-25 px-5"
+        class="w-full h-full px-5 text-opacity-25 bg-black bg-opacity-90 hero-overlay pattern-vertical-lines-lg text-secondary"
       >
-        <div class="container flex flex-col h-full justify-center">
+        <div class="container flex flex-col justify-center h-full">
           <div
-            class="c-gap-wrapper pattern-dots-lg border-accent border-4 text-accent text-opacity-25 py-10"
+            class="py-10 text-opacity-25 border-4 c-gap-wrapper pattern-dots-lg border-accent text-accent"
           >
             <div class="flex flex-col c-gap c-gap-x-8 md:flex-row">
               <div
                 data-aos="fade-right"
                 data-aos-easing="ease-in-out"
                 data-aos-duration="1000"
-                class="flex-1 flex justify-center items-center"
+                class="flex items-center justify-center flex-1"
               >
                 <img
-                  class="transition-all duration-500 h-40 md:h-64 rounded-full hover:rounded-none"
+                  class="h-40 transition-all duration-500 rounded-full md:h-64 hover:rounded-none"
                   src="@/assets/my_avatar.jpg"
                   alt="Avatar"
                 />
@@ -26,10 +26,10 @@
                 data-aos="fade-left"
                 data-aos-easing="ease-in-out"
                 data-aos-duration="1000"
-                class="flex-1 flex flex-col items-center md:items-start"
+                class="flex flex-col items-center flex-1 md:items-start"
               >
                 <p
-                  class="text-white font-bold text-xl sm:text-2xl md:text-4xl mb-5"
+                  class="mb-5 text-xl font-bold text-white sm:text-2xl md:text-4xl"
                 >
                   Hi,
                   <br />
@@ -44,7 +44,7 @@
                   <button
                     @click="scrollToSection(aboutSection, 'about-section')"
                     type="button"
-                    class="text-white transition-all duration-500 border-accent border-2 hover:bg-accent font-bold py-4 px-10"
+                    class="px-10 py-4 font-bold text-white transition-all duration-500 border-2 border-accent hover:bg-accent"
                   >
                     About me
                   </button>
@@ -55,11 +55,11 @@
         </div>
       </div>
     </section>
-    <main class="container bg-background">
+    <div class="container h-auto px-5 bg-cover bg-background">
       <section
         ref="aboutSection"
         id="about-section"
-        class="h-full flex flex-col relative mx-auto pt-20 px-5"
+        class="relative flex flex-col h-full mx-auto"
       >
         <div class="custom-shape-divider-top-1602488617">
           <svg
@@ -74,110 +74,73 @@
             ></path>
           </svg>
         </div>
-        <div class="">
-          <div
-            data-aos="fade-in"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="600"
-            class="title-line text-3xl font-bold mb-20"
-          >
-            About me
-          </div>
-          <div class="c-gap-wrapper mb-8">
+        <div
+          data-aos="fade-in"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="600"
+          class="my-20 text-3xl font-bold title-line"
+        >
+          About me
+        </div>
+        <div class="c-gap-wrapper">
+          <div class="flex flex-col c-gap c-gap-8 md:flex-row">
             <div
-              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 c-gap c-gap-8"
+              data-aos="fade-right"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              class="flex flex-col justify-center flex-1 px-8 py-5 border-2 border-black shadow-xl bg-background"
+            >
+              <img
+                class="h-40 mx-auto mb-4 transition-all duration-500 rounded-full hover:rounded-none"
+                src="@/assets/my_avatar.jpg"
+              />
+              <p class="font-bold text-justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                quis diam tempor dolor condimentum auctor ut in mi. Etiam a
+                tristique nisi. Nam volutpat, erat a eleifend pharetra, nunc
+                enim posuere arcu, nec ullamcorper mi nulla id nulla. Ut tempor
+                tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Integer quis diam tempor dolor condimentum auctor ut in mi.
+                Etiam a tristique nisi. Nam volutpat, erat a eleifend pharetra,
+                nunc enim posuere arcu, nec ullamcorper mi nulla id nulla. Ut
+                tempor tempor
+              </p>
+            </div>
+            <div
+              data-aos="fade-left"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              class="flex flex-col justify-center flex-1 px-8 py-5 border-2 border-black shadow-xl bg-background"
             >
               <div
-                v-for="(item, i) in whatCanIDo"
+                data-aos="fade-in"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                class="mb-4 font-bold title-line"
+              >
+                My skills
+              </div>
+              <div
+                v-for="(skill, i) in skills"
                 :key="i"
-                data-aos="flip-left"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="500"
-                :data-aos-delay="250 * i"
+                class="progress-container group"
               >
-                <div
-                  class="flex flex-col items-center justify-center transition-all duration-500 transform border-black border-2 shadow-xl p-5 group hover:bg-black hover:scale-110 cursor-pointer"
-                >
-                  <i
-                    class="material-icons-outlined text-6xl group-hover:text-white"
-                    >{{ item.icon }}</i
-                  >
+                <div class="progress-title">
+                  {{ skill.name }}
+                </div>
+                <div class="progress-bg">
                   <div
-                    class="text-center font-bold text-4xl group-hover:text-white"
+                    class="progress"
+                    :style="
+                      `--progress: ${skill.percent}; --progress-delay: ${1000 +
+                        100 * i}ms`
+                    "
+                  ></div>
+                  <div
+                    class="progress-percent"
+                    :style="`--progress-percent-delay: ${1200 + 100 * i}ms`"
                   >
-                    {{ item.title }}
-                  </div>
-                  <p
-                    class="text-center group-hover:text-white whitespace-pre-line"
-                  >
-                    {{ item.desc }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="c-gap-wrapper">
-            <div class="flex flex-col c-gap c-gap-8 md:flex-row">
-              <div
-                data-aos="fade-right"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
-                class="bg-background flex-1 flex flex-col justify-center shadow-xl border-black border-2 py-5 px-8"
-              >
-                <img
-                  class="transition-all duration-500 h-40 rounded-full mx-auto mb-4 hover:rounded-none"
-                  src="@/assets/my_avatar.jpg"
-                />
-                <p class="text-justify font-bold">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer quis diam tempor dolor condimentum auctor ut in mi.
-                  Etiam a tristique nisi. Nam volutpat, erat a eleifend
-                  pharetra, nunc enim posuere arcu, nec ullamcorper mi nulla id
-                  nulla. Ut tempor tempor Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Integer quis diam tempor dolor
-                  condimentum auctor ut in mi. Etiam a tristique nisi. Nam
-                  volutpat, erat a eleifend pharetra, nunc enim posuere arcu,
-                  nec ullamcorper mi nulla id nulla. Ut tempor tempor
-                </p>
-              </div>
-              <div
-                data-aos="fade-left"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
-                class="bg-background flex-1 flex flex-col justify-center shadow-xl border-black border-2 py-5 px-8"
-              >
-                <div
-                  data-aos="fade-in"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="1000"
-                  class="title-line font-bold mb-4"
-                >
-                  My skills
-                </div>
-
-                <div
-                  v-for="(skill, i) in skills"
-                  :key="i"
-                  class="progress-container group"
-                >
-                  <div class="progress-title">
-                    {{ skill.name }}
-                  </div>
-                  <div class="progress-bg">
-                    <div
-                      class="progress"
-                      :style="
-                        `--progress: ${
-                          skill.percent
-                        }; --progress-delay: ${1000 + 100 * i}ms`
-                      "
-                    ></div>
-                    <div
-                      class="progress-percent"
-                      :style="`--progress-percent-delay: ${1100 + 100 * i}ms`"
-                    >
-                      {{ skill.percent }}
-                    </div>
+                    {{ skill.percent }}
                   </div>
                 </div>
               </div>
@@ -185,8 +148,85 @@
           </div>
         </div>
       </section>
-      <section class="bg-opacity-95 relative"></section>
-    </main>
+      <section class="h-full">
+        <div
+          data-aos="fade-in"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="600"
+          class="my-20 text-3xl font-bold title-line"
+        >
+          Project Goals
+        </div>
+        <div class="mt-8 c-gap-wrapper">
+          <div class="flex flex-wrap c-gap-padding c-gap-8">
+            <div
+              v-for="(item, i) in whatCanIDo"
+              :key="i"
+              data-aos="flip-left"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="500"
+              :data-aos-delay="250 * i"
+              class="w-full sm:w-1/2 lg:w-1/4"
+            >
+              <div
+                class="flex flex-col items-center justify-center h-full p-5 transition-all duration-500 transform border-2 border-black shadow-xl cursor-pointer hover:shadow-2xl group hover:bg-black hover:scale-110"
+              >
+                <i
+                  :class="`mdi ${item.icon} text-6xl group-hover:text-white`"
+                ></i>
+                <div
+                  class="text-4xl font-bold text-center group-hover:text-white"
+                >
+                  {{ item.title }}
+                </div>
+                <p
+                  class="text-center whitespace-pre-line group-hover:text-white"
+                >
+                  {{ item.desc }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="relative flex flex-col h-full pb-20 mx-auto">
+        <div
+          data-aos="fade-in"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="600"
+          class="my-20 text-3xl font-bold title-line"
+        >
+          Contact me
+        </div>
+        <div class="mt-8 c-gap-wrapper">
+          <div class="flex flex-wrap c-gap-padding c-gap-8">
+            <div
+              v-for="(item, i) in contacts"
+              :key="i"
+              data-aos="flip-left"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="500"
+              :data-aos-delay="250 * i"
+              class="w-full sm:w-1/2 lg:w-1/4"
+            >
+              <div
+                @click="openLink(item.link)"
+                class="flex flex-col items-center justify-center h-full p-5 transition-all duration-500 transform border-2 border-black shadow-xl cursor-pointer hover:shadow-2xl group hover:bg-black hover:scale-110"
+              >
+                <i
+                  :class="`mdi ${item.icon} text-6xl group-hover:text-white`"
+                ></i>
+                <div
+                  class="text-4xl font-bold text-center group-hover:text-white"
+                >
+                  {{ item.title }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -200,22 +240,22 @@ export default Vue.extend({
   setup() {
     const whatCanIDo = ref([
       {
-        icon: "offline_bolt",
+        icon: "mdi-flash-circle",
         title: "Fast",
         desc: "Fast load times and lag free interaction, my highest priority.",
       },
       {
-        icon: "devices",
+        icon: "mdi-devices",
         title: "Responsive",
         desc: "My layouts will work on any device, big or small.",
       },
       {
-        icon: "emoji_objects",
+        icon: "mdi-lightbulb-outline",
         title: "Intuitive",
         desc: "Strong preference for easy to use, intuitive UX/UI.",
       },
       {
-        icon: "dynamic_feed",
+        icon: "mdi-rocket",
         title: "Dynamic",
         desc:
           "Websites don't have to be static,\n I love making pages come to life.",
@@ -281,6 +321,34 @@ export default Vue.extend({
       },
     ]);
 
+    const openLink = (url: string) => {
+      const win = window.open(url, "_blank");
+      win?.focus();
+    };
+
+    const contacts = ref([
+      {
+        icon: "mdi-facebook",
+        title: "Facebook",
+        link: "https://www.facebook.com/joetifa2003",
+      },
+      {
+        icon: "mdi-linkedin",
+        title: "Linkedin",
+        link: "https://www.facebook.com/joetifa2003",
+      },
+      {
+        icon: "mdi-lightbulb-outline",
+        title: "Instgram",
+        link: "https://www.facebook.com/joetifa2003",
+      },
+      {
+        icon: "mdi-whatsapp",
+        title: "Whatsapp",
+        link: "https://api.whatsapp.com/send?phone=01111400113",
+      },
+    ]);
+
     const aboutSection = ref(null);
 
     function scrollToSection(sectionRef: any, sectionName: any) {
@@ -291,6 +359,8 @@ export default Vue.extend({
     return {
       whatCanIDo,
       skills,
+      contacts,
+      openLink,
       aboutSection,
       scrollToSection,
     };

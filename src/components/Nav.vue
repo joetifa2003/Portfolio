@@ -1,16 +1,16 @@
 <template>
   <header>
     <nav
-      class="fixed top-0 w-full px-5 bg-primary border-accent border-b-4 text-white py-2 z-50"
+      class="fixed top-0 z-50 w-full py-2 text-white border-b-4 bg-primary border-accent"
     >
-      <div class="flex justify-between items-center container">
-        <div class="flex-1 flex">
+      <div class="container flex items-center justify-between px-5">
+        <div class="flex flex-1">
           <button
             @click="isOpen = !isOpen"
-            class="flex items-center text-gray-500 hover:text-white mr-5 md:hidden"
+            class="flex items-center mr-5 text-gray-500 hover:text-white md:hidden"
           >
             <svg
-              class="fill-current h-5 w-5"
+              class="w-5 h-5 fill-current"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -18,7 +18,7 @@
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
-          <div class="font-bold text-2xl">Youssef Ahmed</div>
+          <div class="text-2xl font-bold">Youssef Ahmed</div>
         </div>
         <div class="c-gap-wrapper">
           <scrollactive
@@ -37,11 +37,11 @@
     <div
       @click="isOpen = false"
       :class="isOpen ? 'bg-opacity-25' : 'bg-opacity-0 z-hidden'"
-      class="overlay transition duration-500 ease-in-out bg-black w-full h-full fixed z-20 "
+      class="fixed z-20 w-full h-full transition duration-500 ease-in-out bg-black overlay "
     />
     <aside
       :class="isOpen ? 'translate-x-0 nav-open' : '-translate-x-full'"
-      class="transform w-64 bg-secondary fixed h-full ease-in-out transition-all duration-300 z-30 py-8"
+      class="fixed z-30 w-64 h-full py-8 transition-all duration-300 ease-in-out transform bg-secondary"
     >
       <scrollactive
         :offset="52"
@@ -50,19 +50,19 @@
       >
         <div class="flex justify-center mb-5">
           <img
-            class="transition-all duration-500 h-32 md:h-64 rounded-full hover:rounded-none"
+            class="h-32 transition-all duration-500 rounded-full md:h-64 hover:rounded-none"
             src="@/assets/my_avatar.jpg"
             alt="Avatar"
           />
         </div>
         <a
           href="#home-section"
-          class="scrollactive-item nav-link mb-5 menu-link delay-500"
+          class="mb-5 delay-500 scrollactive-item nav-link menu-link"
           >Home</a
         >
         <a
           href="#about-section"
-          class="scrollactive-item nav-link mb-5 menu-link delay-700"
+          class="mb-5 delay-700 scrollactive-item nav-link menu-link"
           >About</a
         >
       </scrollactive>

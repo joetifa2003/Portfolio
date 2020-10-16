@@ -5,9 +5,14 @@
 @tailwind utilities;
 
 @layer components {
+  * {
+    overflow: visible !important;
+  }
+
   .container {
     @apply mx-auto;
   }
+
   .nav-link {
     @apply transition-colors duration-300 text-white text-center;
   }
@@ -106,6 +111,18 @@
 
   .custom-shape-divider-top-1602488617 .shape-fill {
     @apply fill-current text-accent;
+  }
+
+  .card {
+    @apply flex flex-col items-center justify-center h-full p-5 transition-all duration-500 transform border-2 border-black shadow-xl cursor-pointer hover:shadow-2xl hover:bg-black hover:scale-110;
+
+    .card-title {
+      @apply text-4xl font-bold text-center group-hover:text-white;
+    }
+
+    .card-descreption {
+      @apply text-center whitespace-pre-line group-hover:text-white;
+    }
   }
 }
 
