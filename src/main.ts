@@ -9,7 +9,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import VueScrollactive from "vue-scrollactive";
 import "pattern.css/dist/pattern.css";
-import "@mdi/font/css/materialdesignicons.css"
 
 Vue.config.productionTip = false;
 Vue.use(VueCompositionAPI);

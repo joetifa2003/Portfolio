@@ -172,7 +172,8 @@
                 class="flex flex-col items-center justify-center h-full p-5 transition-all duration-500 transform border-2 border-black shadow-xl cursor-pointer hover:shadow-2xl group hover:bg-black hover:scale-110"
               >
                 <i
-                  :class="`mdi ${item.icon} text-6xl group-hover:text-white`"
+                  class="text-6xl iconify group-hover:text-white"
+                  :data-icon="item.icon"
                 ></i>
                 <div
                   class="text-4xl font-bold text-center group-hover:text-white"
@@ -214,7 +215,8 @@
                 class="flex flex-col items-center justify-center h-full p-5 transition-all duration-500 transform border-2 border-black shadow-xl cursor-pointer hover:shadow-2xl group hover:bg-black hover:scale-110"
               >
                 <i
-                  :class="`mdi ${item.icon} text-6xl group-hover:text-white`"
+                  class="text-6xl iconify group-hover:text-white"
+                  :data-icon="item.icon"
                 ></i>
                 <div
                   class="text-4xl font-bold text-center group-hover:text-white"
